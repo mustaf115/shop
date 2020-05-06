@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../comps/Header'
+import Header from '../../comps/Header'
 
 export default () => {
   return (
@@ -13,7 +13,7 @@ export default () => {
 
       <main>
         <h1 className="title">
-          Welcome to hardware store!
+          Product list
         </h1>
 
         

@@ -13,7 +13,7 @@ export default () => {
 
       <main>
         <h1 className="title">
-          Welcome to hardware store!
+          Categories!
         </h1>
 
         
