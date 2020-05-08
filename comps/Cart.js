@@ -1,26 +1,30 @@
-import React, { useState } from 'react'
-import { ShoppingCartOutline as CartIcon } from '@styled-icons/evaicons-outline/ShoppingCartOutline'
+import React from 'react'
 
 const Cart = () => {
-  const [cartOpen, setCartOpen] = useState(false)
 
   return (
-    <div>
-      <button className="cart" onClick={ () => setCartOpen(!cartOpen) }>
-        <CartIcon width="40px" />
-      </button>
-      { cartOpen && 'dupa' }
+    <div className="cart">
+      dupa
       <style jsx>{`
         .cart {
-          color: inherit;
-          background: none;
-          border: none;
-          cursor: pointer;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
         }
-        .cart:hover,
-        .cart:active,
-        .cart:focus {
-          color: #333;
+        @media(min-width: 720px) {
+          .cart {
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            bottom: initial;
+            left: initial;
+            border: 1px solid #EEE;
+            box-shadow: 0 0 15px #EEE;
+          }
         }
       `}</style>
     </div>
