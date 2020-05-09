@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import unfetch from 'isomorphic-unfetch'
 import Header from '../../comps/Header'
-import Products from '../../comps/products'
+import Products from '../../comps/Products'
 import Filters from '../../comps/Filters'
 
 const ProductsPage = ({ products }) => {

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../comps/Header'
+import Header from '../../comps/Header'
 
 export default () => {
   return (
@@ -16,7 +16,7 @@ export default () => {
           Categories!
         </h1>
 
-        
+
       </main>
 
       <style jsx>{`
@@ -30,7 +30,7 @@ export default () => {
           font-size: 4rem;
         }
       `}</style>
-      
+
       <style jsx global>{`
         html,
         body {
