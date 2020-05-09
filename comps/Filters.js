@@ -1,5 +1,5 @@
 const Filters = () => (
-  <aside classNane="filters">
+  <aside className="filters">
     filter
     <style jsx>{`
       .filters {

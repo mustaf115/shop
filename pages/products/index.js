@@ -4,7 +4,7 @@ import Header from '../../comps/Header'
 import Products from '../../comps/products'
 import Filters from '../../comps/Filters'
 
-const ProductsPage = () => {
+const ProductsPage = ({ products }) => {
   return (
     <div className="container">
       <Head>
@@ -19,7 +19,7 @@ const ProductsPage = () => {
           Product list
         </h1>
         <Filters />
-        <Products />
+        <Products products={products} />
       </section>
 
       <style jsx>{`

@@ -52,7 +52,7 @@ export default [
     discountPrice: null,
     discountRate: null,
     images: [
-      'https://lh3.googleusercontent.com/proxy/cwlrtIflXdJ4snldoeaOE8T1vnxKglN2104DprI2NuPLrSYh2ggSmT0mrv6T5WtcA2QNVB-tZqKEvmGUCUeSSKYsTrAtdecjGIrIQPWhjyXWgwHfrd0KFkSv65DHIzlRI5RpLlgivN-y',
+      'https://cdn.shopify.com/s/files/1/0549/2681/files/02211811104.jpg?v=1528653028',
       'https://the620guy.com/wp-content/uploads/2019/02/20190213-SOLIDTEK_ACK-595_PS2_4.jpg',
       'https://image.ceneostatic.pl/data/products/52157193/i-wolftrack-french-membrane-keyboard-french-ergonomic-design.jpg'
     ]
