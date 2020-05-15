@@ -12,6 +12,7 @@
     "next": "9.3.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-image-gallery": "^1.0.7",
     "styled-components": "^5.1.0",
     "styled-icons": "^10.2.1"
   }

@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import unfetch from 'isomorphic-unfetch'
 import Header from '../../comps/Header'
+import Container from '../../comps/Container'
 import Products from '../../comps/Products'
 import Filters from '../../comps/Filters'
 
 const ProductsPage = ({ products }) => {
   return (
-    <div className="container">
+    <Container>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -23,10 +24,6 @@ const ProductsPage = ({ products }) => {
       </section>
 
       <style jsx>{`
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
         .product-view {
           display: grid;
           grid-template-areas:
@@ -49,14 +46,14 @@ const ProductsPage = ({ products }) => {
           }
         }
       `}</style>
-    </div>
+    </Container>
   )
 }
 
-ProductsPage.getInitialProps = async () => {
+export const getServerSideProps = async () => {
   const response = await unfetch('http://localhost:3000/api/products')
   const products = await response.json()
-  return { products }
+  return { props: { products } }
 }
 
 export default ProductsPage;

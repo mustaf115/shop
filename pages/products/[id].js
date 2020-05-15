@@ -1,9 +1,12 @@
 import Head from 'next/head'
+import unfetch from 'isomorphic-unfetch'
 import Header from '../../comps/Header'
+import Product from '../../comps/Product'
+import Container from '../../comps/Container'
 
-export default () => {
+const ProductPage = ({ product }) => {
   return (
-    <div className="container">
+    <Container>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -12,15 +15,12 @@ export default () => {
       <Header />
 
       <main>
-        <h1 className="title">
-          Categories!
-        </h1>
-
+        <Product product={product} />
 
       </main>
 
       <style jsx>{`
-        .container {
+        .containerX {
           max-width: 1200px;
           margin: 0 auto;
         }
@@ -45,6 +45,14 @@ export default () => {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Container>
   )
 }
+
+export const getServerSideProps = async context => {
+  const response = await unfetch('http://localhost:3000/api/products/' + context.params.id)
+  const product = await response.json()
+  return { props: { product } }
+}
+
+export default ProductPage

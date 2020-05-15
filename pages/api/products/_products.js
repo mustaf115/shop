@@ -2,7 +2,7 @@ export default [
   {
     id: 0,
     name: 'Computer mouse',
-    category: ['computer', 'accessory'],
+    category: ['computer', 'mouse'],
     price: 10,
     description: 'Standard mouse powered with USB cable.',
     specs: [

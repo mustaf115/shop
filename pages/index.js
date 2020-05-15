@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Header from '../comps/Header'
+import Container from '../comps/Container'
 
 export default () => {
   return (
-    <div className="container">
+    <Container>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,16 +21,12 @@ export default () => {
       </main>
 
       <style jsx>{`
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
         .title {
           text-align: center;
           line-height: 1.15;
           font-size: 4rem;
         }
       `}</style>
-    </div>
+    </Container>
   )
 }
