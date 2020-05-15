@@ -2,7 +2,7 @@ export default [
   {
     id: 0,
     name: 'Computer mouse',
-    category: ['computer', 'mouse'],
+    categories: ['computer', 'mouse'],
     price: 10,
     description: 'Standard mouse powered with USB cable.',
     specs: [
@@ -21,7 +21,7 @@ export default [
   {
     id: 1,
     name: 'Gaming mouse',
-    category: ['computer', 'mouse'],
+    categories: ['computer', 'mouse'],
     price: 20,
     description: 'Special wireless mouse. High sensitivity for the best experience.',
     specs: [
@@ -40,7 +40,7 @@ export default [
   {
     id: 2,
     name: 'Membrane keyboard',
-    category: ['computer', 'keyboard'],
+    categories: ['computer', 'keyboard'],
     price: 20,
     description: 'Common office keyboard',
     specs: [
@@ -60,7 +60,7 @@ export default [
   {
     id: 3,
     name: 'Mechanical keyboard',
-    category: ['computer', 'keyboard'],
+    categories: ['computer', 'keyboard'],
     price: 25,
     description: 'Clicking gaming keyboard',
     specs: [
@@ -80,7 +80,7 @@ export default [
   {
     id: 4,
     name: 'Phone case',
-    category: ['mobile', 'case'],
+    categories: ['mobile', 'case'],
     price: 5,
     description: 'Silicone phone case',
     specs: [

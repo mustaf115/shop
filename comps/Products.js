@@ -21,7 +21,7 @@ const Products = ({ products = [] }) => {
     <main className="products">
       {
         products
-          .filter( product => !query.category || product.category.includes(query.category))
+          .filter( product => !query.categories || product.categories.includes(query.category))
           .map( product => (
           <Link href="/products/[id]" as={`/products/${product.id}`} key={product.id}>
             <a>

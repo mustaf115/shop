@@ -2,6 +2,7 @@ import Head from 'next/head'
 import unfetch from 'isomorphic-unfetch'
 import Header from '../../comps/Header'
 import Product from '../../comps/Product'
+import Breadcrumbs from '../../comps/Breadcrumbs'
 import Container from '../../comps/Container'
 
 const ProductPage = ({ product }) => {
@@ -14,35 +15,34 @@ const ProductPage = ({ product }) => {
 
       <Header />
 
+      <Breadcrumbs categories={product.categories} />
       <main>
         <Product product={product} />
-
+        <h2 className="table-title">Specifications</h2>
+        <table>
+          {
+            product.specs.map( spec => (
+              <tr>
+                <td>{spec[0]}</td>
+                <td>{spec[1]}</td>
+              </tr>
+            ))
+          }
+        </table>
       </main>
 
       <style jsx>{`
-        .containerX {
-          max-width: 1200px;
+        .table-title {
+          text-align: center;
+        }
+        table {
+          border-collapse: collapse;
           margin: 0 auto;
         }
-        .title {
-          text-align: center;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
+        td {
+          min-width: 100px;
+          padding: 5px 10px;
+          border: 1px solid black;
         }
       `}</style>
     </Container>

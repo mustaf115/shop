@@ -1,5 +1,8 @@
+import { Provider } from 'react-redux'
+import store from '../redux/store'
+
 export default ({ Component, pageProps }) => (
-  <>
+  <Provider store={store}>
     <Component {...pageProps} />
     <style jsx global>{`
       html,
@@ -21,5 +24,5 @@ export default ({ Component, pageProps }) => (
         text-decoration: none;
       }
     `}</style>
-  </>
+  </Provider>
 )

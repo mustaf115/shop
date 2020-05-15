@@ -1,10 +1,38 @@
-import ImageGallery from 'react-image-gallery'
+import Link from 'next/link'
 import { useState } from 'react'
 
-const Product = ({ product: { images, name } }) => {
+const Price = ({ price, discountPrice, isDiscounted }) => (
+  <div>
+    { isDiscounted && <span className="discounted">${price}</span> }
+    { isDiscounted ? <span>${discountPrice}</span> : <span>${price}</span> }
+    <style jsx>{`
+      span {
+        font-size: 24px;
+      }
+      .discounted {
+        margin-right: 1em;
+        display: inline-block;
+        position: relative;
+        color: #D00;
+      }
+      .discounted::after {
+        content: '';
+        border-bottom: 3px solid #D00;
+        position: absolute;
+        top: 40%;
+        right: -5px;
+        left: -5px;
+        transform: rotate(30deg);
+    `}</style>
+  </div>
+)
+
+const Product = ({ product: { images, name, price, isDiscounted, discountPrice } }) => {
   const [currentPic, setCurrentPic] = useState(0)
 
   const changePic = (i) => setCurrentPic(i)
+
+  
 
   return (
     <section className="product">
@@ -12,8 +40,12 @@ const Product = ({ product: { images, name } }) => {
         <div className="thumbnails">
           {
             images.map( (img, i) => 
-            <div className={ currentPic === i ? 'thumbnail picked' : 'thumbnail' } key={i}>
-                <img onClick={ () => changePic(i) } src={img} alt={name + i} />
+              <div
+                className={ currentPic === i ? 'thumbnail picked' : 'thumbnail' }
+                key={i}
+                onClick={ () => changePic(i) }
+              >
+                  <img src={img} alt={name + i} />
               </div> )
           }
         </div>
@@ -23,7 +55,7 @@ const Product = ({ product: { images, name } }) => {
       </div>
       <div className="info">
         <h1 className="title">{name}</h1>
-        dupa
+        <Price price={price} discountPrice={discountPrice} isDiscounted={isDiscounted} />
       </div>
       <style jsx>{`
         .product {
@@ -97,18 +129,9 @@ const Product = ({ product: { images, name } }) => {
               "title title"
               "gallery info";
             grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
           }
         }
-      `}</style>
-      <style jsx global>{`
-      .image-gallery-original img {
-        height: 300px;
-      }
-      .image-gallery-thumbnail .image-gallery-thumbnail-image {
-        max-width: 80px;
-        width: initial;
-        max-height: 100px;
-      }
       `}</style>
     </section>
   )
